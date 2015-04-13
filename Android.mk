@@ -14,6 +14,8 @@
 
 SAM_ROOT := $(call my-dir)
 
+ifneq ($(filter i9305 n7100 n8000 n8013 n8020 t0lte t0lteatt t0ltetmo i605 l900 r950 i925 n5100 n5110 n5120 lt013g lt01wifi lt01lte,$(TARGET_DEVICE)),)
+
 # Exynos 4
 ifeq ($(TARGET_BOARD_PLATFORM),exynos4)
 ifeq ($(TARGET_SOC),exynos4210)
@@ -36,4 +38,6 @@ endif
 
 ifeq ($(BOARD_VENDOR),samsung)
 include $(SAM_ROOT)/ril/Android.mk
+endif
+
 endif
