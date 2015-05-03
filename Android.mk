@@ -12,9 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-SAM_ROOT := $(call my-dir)
+ifeq ($(TARGET_DEVICE),i9300)
+    # nothing
+else
 
-ifneq ($(filter i9305 n7100 n8000 n8013 n8020 t0lte t0lteatt t0ltetmo i605 l900 r950 i925 n5100 n5110 n5120 lt013g lt01wifi lt01lte,$(TARGET_DEVICE)),)
+SAM_ROOT := $(call my-dir)
 
 # Exynos 4
 ifeq ($(TARGET_BOARD_PLATFORM),exynos4)
